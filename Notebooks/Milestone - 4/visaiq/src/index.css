@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  min-height: 100vh;
+  background: #030c1c;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  color: #dde6f5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #030c1c; }
+::-webkit-scrollbar-thumb { background: #1a3258; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #2a4a7f; }
+
+/* Range slider thumb */
+input[type=range] { cursor: pointer; }
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #c8952a;
+  cursor: pointer;
+  border: 2px solid #030c1c;
+  box-shadow: 0 0 6px #c8952a66;
+}
+input[type=range]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #c8952a;
+  cursor: pointer;
+  border: 2px solid #030c1c;
+}
+
+/* Select */
+select { cursor: pointer; }
+select:focus { outline: none; }
+select option { background: #0b1d38; color: #dde6f5; }
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.animate-spin    { animation: spin 1s linear infinite; }
+.animate-fade-in { animation: fadeIn 0.4s ease forwards; }
